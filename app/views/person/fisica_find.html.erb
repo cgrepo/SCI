@@ -1,0 +1,11 @@
+<h1>Personas Fisicas Busquedas y Actualizaciones</h1>
+<p>Find me in app/views/person/fisica.html.erb</p>
+
+<button class="btn btn-primary" type="submit" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+Toggle right offcanvas
+</button>
+<%= button_to 'TOOTLE CURP', person_find_curp_path, data:{'bs-toggle':'offcanvas', 'bd-target':'#offcanvasRight'}, class:'btn btn-primary' %>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <%= turbo_frame_tag 'offcanvas_content' %>
+</div>

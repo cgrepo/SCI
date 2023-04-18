@@ -1,0 +1,93 @@
+        <div class="col-auto">
+          <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+            <div class="mt-4">
+              <a href="" class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4" role="button">
+                <span class="fs-5">
+                 MENU/OPCIONES 
+                </span>
+              </a>
+              <hr class="text-white d-none d-sm-block">
+              <ul class="nav nav-pills flex-column mt-4 mt-sm-0">
+                <li class="nav-item my-sm-1 my-2">
+                  <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                    <i class="bx bxs-castle"></i>
+                    <span class="ms-2 d-none d-sm-inline">INICIO</span>
+                  </a>
+                </li>
+                <li class="nav-item my-sm-1 my-2 disabled">
+                  <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                    <i class='bx bxs-group'></i>
+                    <span class="ms-2 d-none d-sm-inline">PERSONAS</span>
+                    <span class="bx bx-caret-down"></span>
+                  </a>
+                  <ul class="nav collapse ms-1 flex-column" id="sidemenu" data-bs-parent="#menu">
+                    <li class="nav-item">                      
+                    <a href="#submenuFisica" role="button" data-bs-toggle="collapse" class="nav-link text-white text-center" 
+                    aria-expanded="false" aria-controls="submenuFisica">
+                      <i class='bx bx-male-female'></i>
+                      Fisicas 
+                      <span class="bx bx-caret-down"></span>
+                     </a>
+                     <div class="collapse" id="submenuFisica">
+                          <ul class="nav flex-column text-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Altas">
+                                <h4><i class='bx bx-user-plus'></i></h4></a>
+                            </li>
+                            <li class="nav-item">
+                              <%= link_to person_fisica_find_path, data:{ 'bs-toggle':'tooltip', 'bs-placement':'right', 'bs-title': 'Modificaciones y consultas' },
+                                class:'nav-link text-white' do %>
+                                  <h4><i class='bx bxs-user-detail' ></i></h4>
+                              <% end %>
+                            </li>
+                        </ul>
+                      </div> 
+                    </li>
+                    <li class="nav-item ">
+                      <a href="#submenuMoral" role="button" data-bs-toggle="collapse" class="nav-link text-white text-center" 
+                      aria-expanded="false" aria-controls="submenuMoral">
+                        <i class='bx bx-store'/></i>
+                        Morales 
+                        <span class="bx bx-caret-down"></span>
+                       </a>
+                       <div class="collapse" id="submenuMoral">
+                          <ul class="nav flex-column text-center">
+                              <li class="nav-item">
+                                  <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Altas">
+                                  <h4><i class='bx bx-user-plus'></i></h4></a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Modificaciones">
+                                  <h4><i class='bx bxs-user-detail' ></i></h4></a>
+                              </li>
+                          </ul>
+                        </div>                     
+                    </li>
+                    <li class="nav-item">
+                      <a href="#submenuFideicomiso" role="button" data-bs-toggle="collapse" class="nav-link text-white text-center">
+                        <i class='bx bx-file' ></i>
+                        Fideicomisos
+                        <span class="bx bx-caret-down"></span>
+                      </a>
+                      <div class="collapse" id="submenuFideicomiso">
+                      <ul class="nav flex-column text-center">
+                          <li class="nav-item">
+                              <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Altas">
+                              <h4><i class='bx bx-user-plus'></i></h4></a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Modificaciones">
+                              <h4><i class='bx bxs-user-detail' ></i></h4></a>
+                          </li>
+                      </ul>
+                    </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <% if rodauth.logged_in? %>
+              <%= render 'layouts/menus/opciones_de_usuario' %>
+            <% end %>
+          </div>
+        </div>

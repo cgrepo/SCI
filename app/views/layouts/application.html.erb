@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title || "SCI" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <% if rodauth.logged_in? %>
+          <%= render 'layouts/menus/sideMenu' %>
+        <% end %>
+        <div class="col">
+          <div class='row'>
+            <div class='<%= rodauth.logged_in? ? "col-12" : "d-flex justify-content-center" %>'>
+              <br><br>
+               <% if notice %> 
+                 <div class="alert alert-success"><%= notice %></div>
+               <% end %>
+               <% if alert %>
+                 <div class="alert alert-danger"><%= alert %></div>
+               <% end %> 
+            </div>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
