@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'person/moral'
     get 'person/fideicomiso'
     post 'person/find_curp'
+    post 'person/find_name'
   end
   root "inicio#index"
 end

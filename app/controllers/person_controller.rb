@@ -5,7 +5,9 @@ class PersonController < ApplicationController
 
   def fisica_find; end
 
-  def find_curp; end
+  def find_curp
+  debugger
+  end
   
   def moral; end
 

@@ -1,11 +1,35 @@
 <h1>Personas Fisicas Busquedas y Actualizaciones</h1>
-<p>Find me in app/views/person/fisica.html.erb</p>
+<hr>
+<nav class='nav'>
+    <div class='nav-link'>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCURP" aria-controls="offcanvasRight">
+        CURP/MF3
+        </button>
+    </div>
+    <div class='nav-link'>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNAME" aria-controls="offcanvasRight">
+        NOMBRE
+        </button>
+    </div>
+</nav>
+<%= turbo_frame_tag :fisica_respuesta %>
 
-<button class="btn btn-primary" type="submit" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-Toggle right offcanvas
-</button>
-<%= button_to 'TOOTLE CURP', person_find_curp_path, data:{'bs-toggle':'offcanvas', 'bd-target':'#offcanvasRight'}, class:'btn btn-primary' %>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCURP" aria-labelledby="offcanvasCURPLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasCURPLabel">BUSQUEDA POR CURP/MF3</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <%= render 'form_curp' %>
+  </div>
+</div>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <%= turbo_frame_tag 'offcanvas_content' %>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNAME" aria-labelledby="offcanvasNAMELabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNAMELabel">BUSQUEDA POR NOMBRE </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
 </div>
