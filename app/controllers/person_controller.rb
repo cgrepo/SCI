@@ -8,7 +8,7 @@ class PersonController < ApplicationController
   def find_curp
     dataset = PersonaFisica.by_curp(params[:curp_mf3])
     if dataset.count == 1
-      @persona = dataset.first
+      @persona = dataset.first.to_hash
     elsif dataset.count > 1
       @personas = dataset.all
     else

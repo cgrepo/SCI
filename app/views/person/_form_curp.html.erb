@@ -1,8 +1,8 @@
-<%= form_with url:person_find_curp_url,data: { turbo_frame: :fisica_respuesta } do |form| %>
+<%= form_with url:person_find_curp_url,data: { turbo_frame: 'fisica_respuesta' } do |form| %>
     <div class='d-flex flex-column justify-content-between col-auto '>
         <div class="p-2"><%= form.label :curp_mf3, 'CURP/MF3', class:'form-label' %></div>
         <div class="p-2"><%= form.text_field :curp_mf3, class:'form-control' %></div>
-        <div class="p-2"><%= form.submit 'BUSCAR', class:'btn btn-primary' %></div>
+        <div class="p-2"><%= form.submit 'BUSCAR', class:'btn btn-primary', data:{ bs_dismiss:"offcanvas"} %></div>
     </div>
 <% end %>
 
