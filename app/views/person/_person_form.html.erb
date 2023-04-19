@@ -1,0 +1,13 @@
+<%= form_with url:'/' do |form| %>
+    <div class='d-flex flex-row justify-content-around bordered'>
+        <div class='p-3'>
+            <%= form.text_field :nombre, value:person[:nombre], class:'form-control', require:true, disabled:true %>
+        </div>
+        <div class='p-3'>
+            <%= form.text_field :paterno, value:person[:apellido_paterno], class:'form-control', require:true, disabled:true %>
+        </div>
+        <div class='p-3'>
+            <%= form.text_field :materno, value:person[:apellido_materno], class:'form-control', require:false, disabled:true %>
+        </div>
+    </div>
+<% end %>

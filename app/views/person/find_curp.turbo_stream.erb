@@ -1,6 +1,7 @@
 <%= turbo_stream.update 'fisica_respuesta' do %>
   <% if @persona %>
     <%= @persona %>
+    <%= render 'person_form', person:@persona %>
   <% else %>
     <%= @personas %>
   <% end %>
