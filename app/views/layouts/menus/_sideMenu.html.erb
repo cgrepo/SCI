@@ -9,10 +9,10 @@
               <hr class="text-white d-none d-sm-block">
               <ul class="nav nav-pills flex-column mt-4 mt-sm-0">
                 <li class="nav-item my-sm-1 my-2">
-                  <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                  <%= link_to root_path, class:'nav-link text-white text-center text-sm-start', aria:{current:'page'} do %>
                     <i class="bx bxs-castle"></i>
                     <span class="ms-2 d-none d-sm-inline">INICIO</span>
-                  </a>
+                  <% end %>
                 </li>
                 <li class="nav-item my-sm-1 my-2 disabled">
                   <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white text-center text-sm-start" aria-current="page">
